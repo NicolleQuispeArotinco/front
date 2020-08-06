@@ -13,6 +13,7 @@ import {
 import { useSelector } from "react-redux";
 
 import NewEmployee from "./NewEmployeeForm";
+import { Link } from "react-router-dom";
 
 function Personal() {
   const personal = useSelector((state) => state.personal.employees);
@@ -38,7 +39,9 @@ function Personal() {
               <ContentTable>{employee.last_name}</ContentTable>
               <ContentTable>{employee.area}</ContentTable>
               <td>
-                <ViewButton>View</ViewButton>
+                <Link to={`/employee/${employee.id}`}>
+                  <ViewButton>View</ViewButton>
+                </Link>
               </td>
             </Row>
           ))}
@@ -49,7 +52,7 @@ function Personal() {
           Add new employee
         </NewEmployeeButton>
       ) : (
-        <NewEmployee />
+        <NewEmployee onClose={() => setShowForm(false)} />
       )}
     </Container>
   );

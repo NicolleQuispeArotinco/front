@@ -62,3 +62,12 @@ export const NewEmployeeButton = styled.button`
   border-radius: 5px;
   margin-top: 20px;
 `;
+
+export const CancelButton = styled.button`
+  cursor: pointer;
+  border: transparent;
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin-right: 20px;
+`;

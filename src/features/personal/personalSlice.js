@@ -30,7 +30,26 @@ const personalSlice = createSlice({
       },
     ],
   },
-  reducers: {},
+  reducers: {
+    addPersonal: {
+      reducer: (personal, action) => {
+        personal.employees.push(action.payload);
+      },
+      prepare: (name, last_name, area, years) => {
+        return {
+          payload: {
+            id: nanoid(),
+            name,
+            last_name,
+            area,
+            years,
+          },
+        };
+      },
+    },
+  },
 });
+
+export const { addPersonal } = personalSlice.actions;
 
 export default personalSlice.reducer;
