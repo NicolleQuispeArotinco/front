@@ -9,29 +9,33 @@ const personalSlice = createSlice({
         name: "Nicolle",
         last_name: "Quispe",
         area: "T.I",
+        years: "10",
       },
       {
         id: nanoid(),
         name: "Aracely",
         last_name: "Arotinco",
         area: "T.I",
+        years: "10",
       },
       {
         id: nanoid(),
         name: "Fiorella",
         last_name: "Michelle",
         area: "T.I",
+        years: "10",
       },
       {
         id: nanoid(),
         name: "Bryan",
         last_name: "Davis",
         area: "T.I",
+        years: "10",
       },
     ],
   },
   reducers: {
-    addPersonal: {
+    addEmployee: {
       reducer: (personal, action) => {
         personal.employees.push(action.payload);
       },
@@ -47,9 +51,15 @@ const personalSlice = createSlice({
         };
       },
     },
+    deleteEmployee: (personal, action) => {
+      const indexDelete = personal.employees.findIndex(
+        (employee) => employee.id === action.payload
+      );
+      if (indexDelete !== -1) personal.employees.splice(indexDelete, 1);
+    },
   },
 });
 
-export const { addPersonal } = personalSlice.actions;
+export const { addEmployee, deleteEmployee } = personalSlice.actions;
 
 export default personalSlice.reducer;

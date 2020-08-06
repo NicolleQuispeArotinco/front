@@ -4,7 +4,7 @@ import { Formik, useField, Form } from "formik";
 import * as Yup from "yup";
 import { jsx } from "@emotion/core";
 import { CancelButton, ViewButton } from "./layout";
-import { addPersonal } from "./personalSlice";
+import { addEmployee } from "./personalSlice";
 import { useDispatch } from "react-redux";
 
 function Fullfield(props) {
@@ -58,12 +58,12 @@ function NewEmployee({ onClose }) {
             .required("Is required"),
           years: Yup.number()
             .min(0)
-            .max(40, "Must be least or equual than 40")
+            .max(40, "Must be least or equal than 40")
             .required("Is required"),
         })}
         onSubmit={(values) =>
           dispatch(
-            addPersonal(
+            addEmployee(
               values.name,
               values.last_name,
               values.area,

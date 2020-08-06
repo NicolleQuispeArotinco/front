@@ -71,3 +71,38 @@ export const CancelButton = styled.button`
   border-radius: 5px;
   margin-right: 20px;
 `;
+
+export const InfoContainer = styled.div`
+  display: flex;
+`;
+
+export const InfoName = styled.h3`
+  color: #222222;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  margin: 0;
+`;
+
+export const InfoEmployee = styled.p`
+  color: #222222;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 40px;
+  margin: 0 0 0 5px;
+`;
+
+export const DeleteButton = styled.button`
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: transparent;
+  background: red;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #fff;
+  outline: 0;
+  cursor: pointer;
+`;
